@@ -1,0 +1,45 @@
+/* Style the volume slider */
+.volume-slider {
+    width: 200px;
+    height: 5px;
+    -webkit-appearance: none;
+    background: #ccc;
+    border: none;
+    border-radius: 5px;
+    outline: none;
+
+}
+
+/* Customize the appearance of the slider thumb (handle) */
+.volume-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 15px;
+    height: 15px;
+    background: black;
+    border-radius: 50%;
+    cursor: pointer;
+
+}
+
+/* Style the slider when it's in the active (dragged) state */
+.volume-slider::-webkit-slider-thumb:active {
+    background: black;
+}
+
+/* Style the slider when it's in the focus state */
+.volume-slider::-webkit-slider-thumb:focus {
+    box-shadow: 0 0 2px 3px black;
+}
+
+
+/* Remmove arrow of number input for Chrome */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Remmove arrow of number input for Mozila */
+input[type=number]{
+    -moz-appearance: textfield;
+}
