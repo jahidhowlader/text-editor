@@ -9,10 +9,14 @@ function App() {
 
   const [isOpen, setIsOpen] = useState()
   const [typographyFeature, setTypographyFeature] = useState({
-    size: '16',
+    content: '',
+    fontFamily: 'roboto',
+    fontSize: '16',
+    fontWeight: '600',
+    fontStyle: 'normal',
     lineHeight: '0',
     letterSpacing: '0',
-    wordSpacing: '0'
+    wordSpacing: '0',
   })
 
   if (typographyFeature.size > 100) {
@@ -31,15 +35,27 @@ function App() {
   // Handler Refresh Typography
   const handlerRefresh = () => {
 
-    setTypographyFeature({ ...typographyFeature, size: 16, letterSpacing: 0, lineHeight: 0, wordSpacing: 0 })
+    setTypographyFeature({
+      ...typographyFeature, 
+      content: '',
+      fontFamily: 'roboto',
+      fontSize: '16',
+      fontWeight: '600',
+      fontStyle: 'normal',
+      lineHeight: '0',
+      letterSpacing: '0',
+      wordSpacing: '0',
+    })
   }
+
+  console.log(typographyFeature);
 
   return (
     <>
-      <div className='grid grid-cols-6'>
+      <div className='grid lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-6'>
 
         {/* Text Edit Funtionality */}
-        <div className='shadow-md bg-white h-screen'>
+        <div className='shadow-md bg-white lg:h-screen'>
 
           {/* STATATIC EDIT HEADER */}
           <div className='flex justify-between items-center bg-black text-white p-2'>
@@ -48,7 +64,7 @@ function App() {
             <HiViewGrid size={20} />
           </div>
 
-          {/* TODO:  */}
+          {/* TODO: SELECT CATEGORY FOR CUSTOMISATION */}
           <div className='flex justify-between items-center py-3 px-10 text-sm'>
             <div>
               <HiPencil className='mx-auto' />
@@ -138,7 +154,7 @@ function App() {
         </div>
 
         {/* Main Content */}
-        <div className='col-span-5 flex justify-center items-center'>
+        <div className='lg:col-span-3 xl:col-span-4 2xl:col-span-5 flex justify-center items-center mx-5 mt-20 lg:mt-0'>
 
           <div className='space-y-10'>
             <h1 className='text-4xl'>React Task</h1>
@@ -146,13 +162,21 @@ function App() {
               type="text"
               style={
                 {
-                  fontSize: `${typographyFeature.size}px`,
+                  fontSize: `${typographyFeature.fontSize}px`,
+                  fontWeight: `${typographyFeature.fontWeight}`,
+                  fontStyle: `${typographyFeature.fontStyle}`,
                   lineHeight: `${typographyFeature.lineHeight}px`,
                   letterSpacing: `${typographyFeature.letterSpacing}px`,
                   wordSpacing: `${typographyFeature.wordSpacing}px`,
+                  fontFamily: `${typographyFeature.fontFamily}`
                 }}
-              className={`p-5 w-full border text-[${typographyFeature.size}px]`}
+              className='p-5 w-full border'
+              onChange={(e) => {
+                setTypographyFeature({ ...typographyFeature, content: e.target.value })
+              }}
               placeholder='Heading' />
+
+            <h1 className='text-xl'>{typographyFeature.content}</h1>
           </div>
         </div>
       </div>

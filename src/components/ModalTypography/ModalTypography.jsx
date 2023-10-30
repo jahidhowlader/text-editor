@@ -3,14 +3,14 @@ import './ModalTypography.css'
 
 const ModalTypography = ({ isOpen, typographyFeature, setTypographyFeature, handlerRefresh }) => {
     return (
-        <div className={`absolute bg-white w-full pb-4 top-10 drop-shadow-lg rounded space-y-4 ${isOpen ? 'absolute' : 'hidden'}`}>
+        <div className={`bg-white w-full pb-4 top-10 drop-shadow-lg rounded space-y-4 ${isOpen ? 'absolute duration-1000' : 'hidden'}`}>
 
             {/* Moadl Header */}
             <div className=' p-0 py-2 border-b bg-white shadow'>
                 <div className="px-2 flex justify-between items-center">
                     <h6 className="font-bold">Typography</h6>
                     <div className="flex items-center gap-2">
-                        <HiOutlineRefresh className="p-1 shadow rounded cursor-pointer hover:bg-gray-300" size={20} onClick={handlerRefresh}/>
+                        <HiOutlineRefresh className="p-1 shadow rounded cursor-pointer hover:bg-gray-300" size={20} onClick={handlerRefresh} />
                         <HiPlus className="p-1 shadow rounded" size={20} />
                     </div>
                 </div>
@@ -20,8 +20,14 @@ const ModalTypography = ({ isOpen, typographyFeature, setTypographyFeature, hand
             <div className='flex justify-between items-center px-2'>
                 <h6>Family</h6>
                 <div>
-                    <select name="font" id="font" className='border pr-2 rounded-[2px]'>
+                    <select name="font-family" id="font-family" className='border pr-2 rounded-[2px]'
+                        onChange={(e) => {
+                            setTypographyFeature({ ...typographyFeature, fontFamily: e.target.value })
+                        }}>
                         <option value="roboto">Roboto</option>
+                        <option value="inter">Inter</option>
+                        <option value="teko">Teko</option>
+                        <option value="Poppins">Poppins</option>
                         <option value="inter">inter</option>
                     </select>
                 </div>
@@ -44,17 +50,17 @@ const ModalTypography = ({ isOpen, typographyFeature, setTypographyFeature, hand
                     {/* Range Controller */}
                     <input
                         type="range" id="volumeControl" className="volume-slider mt-3" min="5" max="100"
-                        value={typographyFeature.size}
+                        value={typographyFeature.fontSize}
                         onChange={(e) => {
-                            setTypographyFeature({ ...typographyFeature, size: e.target.value })
+                            setTypographyFeature({ ...typographyFeature, fontSize: e.target.value })
                         }}
                     />
-                    
+
                     {/* Input Controller */}
                     <input type="number" className="border rounded w-2/12 mt-1 pl-2"
-                        value={typographyFeature.size}
+                        value={typographyFeature.fontSize}
                         onChange={(e) => {
-                            setTypographyFeature({ ...typographyFeature, size: e.target.value })
+                            setTypographyFeature({ ...typographyFeature, fontSize: e.target.value })
                         }} />
                 </div>
             </div>
@@ -63,10 +69,14 @@ const ModalTypography = ({ isOpen, typographyFeature, setTypographyFeature, hand
             <div className='flex justify-between items-center px-2'>
                 <h6>Weight</h6>
                 <div>
-                    <select name="font" id="font" className='border pr-2 rounded-[2px]'>
+                    <select name="font-weight" id="font-weight" className='border pr-2 rounded-[2px]'
+                        onChange={(e) => {
+                            setTypographyFeature({ ...typographyFeature, fontWeight: e.target.value })
+                        }}>
                         <option value="600">600 (Semi Bold)</option>
                         <option value="400">400 (Normal)</option>
                         <option value="700">700 (Bold)</option>
+                        <option value="900">900 (Black)</option>
                     </select>
                 </div>
             </div>
@@ -87,12 +97,12 @@ const ModalTypography = ({ isOpen, typographyFeature, setTypographyFeature, hand
             <div className='flex justify-between items-center px-2'>
                 <h6>Style</h6>
                 <div>
-                    <select name="font" id="font" className='border pr-2 rounded-[2px]'>
-                        <option value="default">Default</option>
-                        <option value="solid">Solid</option>
-                        <option value="dashed">Dashed</option>
-                        <option value="wavy">Wavy</option>
-                        <option value="wavy">600 (Semi Bold)</option>
+                    <select name="font-style" id="font-style" className='border pr-2 rounded-[2px]'
+                        onChange={(e) => {
+                            setTypographyFeature({ ...typographyFeature, fontStyle: e.target.value })
+                        }}>
+                        <option value="normal">Default</option>
+                        <option value="italic">Italic</option>
                     </select>
                 </div>
             </div>
@@ -134,7 +144,7 @@ const ModalTypography = ({ isOpen, typographyFeature, setTypographyFeature, hand
                             setTypographyFeature({ ...typographyFeature, lineHeight: e.target.value })
                         }}
                     />
-                    
+
                     {/* Input Controller */}
                     <input type="number" className="border rounded w-2/12 mt-1 pl-2"
                         value={typographyFeature.lineHeight}
@@ -199,7 +209,7 @@ const ModalTypography = ({ isOpen, typographyFeature, setTypographyFeature, hand
                             setTypographyFeature({ ...typographyFeature, wordSpacing: e.target.value })
                         }}
                     />
-                    
+
                     {/* Input Controller */}
                     <input type="number" className="border rounded w-2/12 mt-1 pl-2"
                         value={typographyFeature.wordSpacing}
