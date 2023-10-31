@@ -1,6 +1,6 @@
 # Text Editor
 
-### Live Server Link: [https://superb-biscochitos-a0e2ff.netlify.app/](https://superb-biscochitos-a0e2ff.netlify.app/)
+### Live Server Link: [https://6540af936afac567d1c0658b--fabulous-taffy-41c18e.netlify.app/](https://6540af936afac567d1c0658b--fabulous-taffy-41c18e.netlify.app/)
 
 * First of all, you can see the interface like this and click on the title ![alt first-intervace](https://i.ibb.co/QCrH87T/Screenshot-2.png)
 
@@ -14,4 +14,3 @@
     - React
     - Tailwind
     - React Icon
-    
