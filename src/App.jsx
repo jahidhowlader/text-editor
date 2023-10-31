@@ -37,7 +37,7 @@ function App() {
   const handlerRefresh = () => {
 
     setTypographyFeature({
-      ...typographyFeature, 
+      ...typographyFeature,
       content: '',
       fontFamily: 'roboto',
       fontSize: '16',
@@ -49,8 +49,6 @@ function App() {
       wordSpacing: '0',
     })
   }
-
-  console.log(typographyFeature);
 
   return (
     <>
@@ -66,19 +64,19 @@ function App() {
             <HiViewGrid size={20} />
           </div>
 
-          {/* TODO: SELECT CATEGORY FOR CUSTOMISATION */}
-          <div className='flex justify-between items-center py-3 px-10 text-sm'>
-            <div>
-              <HiPencil className='mx-auto' />
+          {/*SELECT CATEGORY FOR CUSTOMISATION */}
+          <div className='flex justify-between items-center px-10 text-sm'>
+            <div className='py-3'>
+              <HiPencil className='mx-auto ' />
               <p>Content</p>
             </div>
 
-            <div className=' px-5'>
+            <div className='py-3 px-5 border-b-2 border-black'>
               <FaAdjust className='mx-auto' />
               <p>Style</p>
             </div>
 
-            <div>
+            <div className='py-3'>
               <HiMiniCog6Tooth className='mx-auto' />
               <p>Advance</p>
             </div>
@@ -177,6 +175,7 @@ function App() {
               onChange={(e) => {
                 setTypographyFeature({ ...typographyFeature, content: e.target.value })
               }}
+              value={typographyFeature.content}
               placeholder='Heading' />
 
             <h1 className='text-xl '>{typographyFeature.content}</h1>

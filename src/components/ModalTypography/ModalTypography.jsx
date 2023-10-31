@@ -23,7 +23,9 @@ const ModalTypography = ({ isOpen, typographyFeature, setTypographyFeature, hand
                     <select name="font-family" id="font-family" className='border pr-2 rounded-[2px]'
                         onChange={(e) => {
                             setTypographyFeature({ ...typographyFeature, fontFamily: e.target.value })
-                        }}>
+                        }}
+                        value={typographyFeature.fontFamily}
+                    >
                         <option value="roboto">Roboto</option>
                         <option value="inter">Inter</option>
                         <option value="teko">Teko</option>
@@ -72,23 +74,13 @@ const ModalTypography = ({ isOpen, typographyFeature, setTypographyFeature, hand
                     <select name="font-weight" id="font-weight" className='border pr-2 rounded-[2px]'
                         onChange={(e) => {
                             setTypographyFeature({ ...typographyFeature, fontWeight: e.target.value })
-                        }}>
+                        }}
+                        value={typographyFeature.fontWeight}
+                    >
                         <option value="600">600 (Semi Bold)</option>
                         <option value="400">400 (Normal)</option>
                         <option value="700">700 (Bold)</option>
                         <option value="900">900 (Black)</option>
-                    </select>
-                </div>
-            </div>
-
-            {/* TODO: FONT TRANSFORM */}
-            <div className='flex justify-between items-center px-2'>
-                <h6>Transform</h6>
-
-                <div>
-                    <select name="font" id="font" className='border pr-2 rounded-[2px]'>
-                        <option value="default">Default</option>
-                        <option value="default">600 (Semi Bold)</option>
                     </select>
                 </div>
             </div>
@@ -100,7 +92,9 @@ const ModalTypography = ({ isOpen, typographyFeature, setTypographyFeature, hand
                     <select name="font-style" id="font-style" className='border pr-2 rounded-[2px]'
                         onChange={(e) => {
                             setTypographyFeature({ ...typographyFeature, fontStyle: e.target.value })
-                        }}>
+                        }}
+                        value={typographyFeature.fontStyle}
+                    >
                         <option value="normal">Default</option>
                         <option value="italic">Italic</option>
                     </select>
@@ -111,10 +105,12 @@ const ModalTypography = ({ isOpen, typographyFeature, setTypographyFeature, hand
             <div className='flex justify-between items-center px-2'>
                 <h6>Decoration</h6>
                 <div>
-                    <select name="font" id="font" className='border pr-2 rounded-[2px]'
+                    <select name="font-decoration" id="font-decoration" className='border pr-2 rounded-[2px]'
                         onChange={(e) => {
                             setTypographyFeature({ ...typographyFeature, textDecoration: e.target.value })
-                        }}>
+                        }}
+                        value={typographyFeature.textDecoration}
+                        >
                         <option value="none">Default</option>
                         <option value="underline ">Underline </option>
                         <option value="line-through">line-through</option>
@@ -185,7 +181,6 @@ const ModalTypography = ({ isOpen, typographyFeature, setTypographyFeature, hand
                         }} />
                 </div>
             </div>
-            {/*  */}
 
             {/* Word Spacing */}
             <div className=" px-2">
