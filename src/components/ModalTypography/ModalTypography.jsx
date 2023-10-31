@@ -111,13 +111,13 @@ const ModalTypography = ({ isOpen, typographyFeature, setTypographyFeature, hand
             <div className='flex justify-between items-center px-2'>
                 <h6>Decoration</h6>
                 <div>
-                    <select name="font" id="font" className='border pr-2 rounded-[2px]'>
-                        <option value="default">Default</option>
-                        <option value="thin">Thin</option>
-                        <option value="wide">wide</option>
-                        <option value="wider">wider</option>
-                        <option value="widest">widest</option>
-                        <option value="widest">600 (Semi Bold)</option>
+                    <select name="font" id="font" className='border pr-2 rounded-[2px]'
+                        onChange={(e) => {
+                            setTypographyFeature({ ...typographyFeature, textDecoration: e.target.value })
+                        }}>
+                        <option value="none">Default</option>
+                        <option value="underline ">Underline </option>
+                        <option value="line-through">line-through</option>
                     </select>
                 </div>
             </div>

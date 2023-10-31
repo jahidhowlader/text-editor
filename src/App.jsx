@@ -14,6 +14,7 @@ function App() {
     fontSize: '16',
     fontWeight: '600',
     fontStyle: 'normal',
+    textDecoration: 'none',
     lineHeight: '0',
     letterSpacing: '0',
     wordSpacing: '0',
@@ -42,6 +43,7 @@ function App() {
       fontSize: '16',
       fontWeight: '600',
       fontStyle: 'normal',
+      textDecoration: 'none',
       lineHeight: '0',
       letterSpacing: '0',
       wordSpacing: '0',
@@ -162,13 +164,14 @@ function App() {
               type="text"
               style={
                 {
+                  fontFamily: `${typographyFeature.fontFamily}`,
                   fontSize: `${typographyFeature.fontSize}px`,
                   fontWeight: `${typographyFeature.fontWeight}`,
                   fontStyle: `${typographyFeature.fontStyle}`,
+                  textDecorationLine: `${typographyFeature.textDecoration}`,
                   lineHeight: `${typographyFeature.lineHeight}px`,
                   letterSpacing: `${typographyFeature.letterSpacing}px`,
                   wordSpacing: `${typographyFeature.wordSpacing}px`,
-                  fontFamily: `${typographyFeature.fontFamily}`
                 }}
               className='p-5 w-full border'
               onChange={(e) => {
@@ -176,7 +179,7 @@ function App() {
               }}
               placeholder='Heading' />
 
-            <h1 className='text-xl'>{typographyFeature.content}</h1>
+            <h1 className='text-xl '>{typographyFeature.content}</h1>
           </div>
         </div>
       </div>
